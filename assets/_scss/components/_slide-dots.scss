@@ -1,0 +1,31 @@
+header{
+    .controls{
+        z-index:1;
+        position:absolute;
+        bottom:1em;
+        left:50%;
+        transform:translateX(-50%);
+        .dot{
+            width:16px;
+            height:16px;
+            background:white;
+            opacity:.5;
+            float:left;
+            border-radius:16px;
+            transition: .35s opacity ease-in-out;
+            &.active{
+                opacity:1;
+            }
+            & + .dot{
+                margin-left:1em;
+                @include grid-media($mobile){
+                    margin-left:.5em;
+                }
+            }
+            &:hover{
+                opacity:1;
+                cursor:pointer;
+            }
+        }
+    }
+}

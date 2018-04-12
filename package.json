@@ -1,0 +1,20 @@
+{
+  "name": "one-eyed-cat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "node-sass": "^4.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.cypressnorth.com/wordpress/cn-wordpress-theme-bootstrap.git"
+  },
+  "devDependencies": {
+    "gulp-notify": "^3.0.0"
+  }
+}

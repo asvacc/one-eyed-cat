@@ -1,0 +1,93 @@
+footer{
+    padding: $section-padding 0;
+    @include grid-container;
+    background:black;
+    .container{
+        .top, .bottom{
+            @include grid-media($desktop-large){
+                @include clearfix;
+                width:100%;
+            }
+        }
+        .bottom{
+            @include grid-media($desktop-large){
+                margin-top:2rem;
+            }
+            @include grid-media($mobile){ 
+                margin:0;
+            }
+        }
+        .column{
+            @include grid-column(3);
+            @include grid-media($desktop-large){
+                @include grid-column(6);
+            }
+            @include grid-media($mobile){
+                @include grid-column(4);
+                & + .column{
+                    margin-top: 2rem;
+                }
+            }
+            text-align:center;
+            h4{
+                color:white;
+                margin-top:0;
+                @include grid-media($tablet){
+                    font-size: 1.25em;
+                }
+            }
+            ul{
+                list-style-type:none;
+                padding:0;
+                margin:0;
+                li{
+                    @include grid-media($tablet){
+                        font-size: 1em;
+                    }
+                }
+            }
+            p{
+                color:white;
+                @include grid-media($tablet){
+                    font-size: 1em;
+                }
+            }
+
+            &.hours{
+                ul{
+                    max-width:300px;
+                    margin:0 auto;
+                    li{
+                        @include grid-container;
+                        span{
+                            color:white;
+                        }
+                        .left, .right{
+                            color:white;
+                            @include grid-column(6);
+                            font-size: .85em;
+                            @include grid-media($tablet){
+                                width:50%;
+                                margin:0;
+                            }
+                        }
+                        .left{
+                            text-align:left;
+                        }
+                        .right{
+                            text-align:right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyright{
+        color:#222;
+        font-size: .9em;
+        text-align:center;
+        font-family: $paragraph-font-family;
+        text-transform:uppercase;
+        margin-top:2rem;
+    }
+} 

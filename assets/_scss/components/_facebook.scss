@@ -1,0 +1,49 @@
+footer .facebook{
+    .widget_custom_html{
+        line-height:0;
+    }
+    .cff-likebox{
+        margin-top:0;
+        .fb_iframe_widget{
+            span{
+                width:300px !important;
+            }
+        }
+    }
+    #cff{
+        float:none;
+        color:white;
+        .cff-item{
+            border-bottom:0 !important;
+            & + .cff-item{
+                border-top: 1px solid #070707 !important;
+            }
+            .cff-author-text a{
+                text-align:left;
+                font-family: $stint;
+                display:inline-block;
+                font-size: 1em;
+                margin-bottom: 4px;
+            }
+            a{
+                color:white;
+            }
+            .cff-post-text{
+                font-family: $pontano;
+                text-align:left;
+                font-size:.8em;
+            }
+            .cff-link-caption{
+                color: #111;
+            }
+            .cff-shared-link{
+                font-family: $pontano;
+                text-align:left;
+                font-size:.8em;
+                .cff-link-title a{
+                    font-family: $stint;
+                }
+            }
+        }
+    }
+}

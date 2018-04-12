@@ -1,0 +1,42 @@
+.where-to-find-us{
+    background:black;
+    .container{
+        h2{
+            color:white;
+            text-align:center;
+            margin-top:0;
+            margin-bottom:1em;
+            @include grid-media($mobile){
+                font-size: 2em;
+            }
+        }
+        .left, .right{
+            @include grid-column(6);
+            @include grid-media($mobile){
+                @include grid-column(4);
+            }
+            ul{
+                list-style-type:none;
+                padding:0;
+                margin:0;
+                li{
+                    &:nth-of-type(odd){
+                        background: $darker-gray;
+                    }
+                    font-family: $pontano;
+                    padding: .5em .5em .5em 1em;
+                    color:white;
+                    transition: .15s background ease-in-out;
+
+                    &:hover{
+                        background: $dark-gray;
+                    }
+
+                    @include grid-media($mobile){
+                        font-size: .9em;
+                    }
+                }
+            }
+        }
+    }
+}

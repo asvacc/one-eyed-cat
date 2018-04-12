@@ -1,0 +1,83 @@
+section.social-media{
+    text-align:center;
+    background:white;
+    h2{
+        margin-top:0;
+        @include grid-media($desktop-small){
+            font-size: 2em;
+        }
+        @include grid-media($mobile){
+            font-size: 1.5em;
+        }
+    }
+    ul{
+        @include clearfix;
+        display:inline-block;
+        padding:0;
+        margin:0;
+        list-style-type:none;
+        li{
+            float:left;
+            padding: 0 1em;
+            @include grid-media($desktop-small){
+                padding: 0 .5em;
+            }
+            a{
+                width:64px;
+                height:64px;
+
+                background-color:white;
+                border: 4px solid black;
+                border-radius:40px;
+                display:block;
+                color:black;
+                position:relative;
+                transition: .15s all ease-in-out;
+                @include grid-media($tablet){
+                    width:54px;
+                    height:54px;
+                }
+                &:hover{
+                    background:black;
+                    &:after{
+                        color:white;
+                    }
+                }
+                &:after{
+                    position:absolute;
+                    transition: .15s all ease-in-out;
+                    top:50%;
+                    left:50%;
+                    transform:translate(-50%,-50%);
+                    color:black;
+                    font-size:1.25em;
+                    font-family: 'Font Awesome\ 5 Brands';
+                    @include grid-media($tablet){
+                        font-size:.9em;
+                    }
+                }
+            }
+            &.instagram{
+                a{
+                    &:after{
+                    content:'\f16d';
+                    }
+                }
+            }
+            &.twitter{
+                a{
+                    &:after{
+                    content:'\f099';
+                    }
+                }
+            }
+            &.facebook{
+                a{
+                    &:after{
+                    content:'\f39e';
+                    }
+                }
+            }
+        }
+    }
+}

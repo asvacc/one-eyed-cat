@@ -1,0 +1,71 @@
+.events{
+    background: #eee;
+    .container{
+        text-align:center;
+        h2{
+            text-align:center;
+            margin-top:0;
+        }
+        .event{
+            display:block;
+            @include grid-column(4);
+            text-align:center;
+            background-image: url('../images/craft beer mugs.jpg');
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-position:center;
+            @include grid-media($tablet){
+                @include grid-column(8);
+                & + .event{
+                    margin-top: 2em;
+                }
+                max-width:500px;
+                float:none;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            @include grid-media($mobile){
+                @include grid-column(4);
+                max-width:unset;
+            }
+            a{
+                display:block;
+                padding-top: 12rem;
+                text-decoration:none;
+                &:hover{
+                    .bottom{
+                        background: $dark-gray;
+                        color:white;
+                    }
+                }
+            }
+            .bottom{
+                display:block;
+                background:black;
+                padding: 1em .5em;
+                font-family: $stint;
+                color:white;
+                .title{
+                    font-size: .95em;
+                    display:block;
+                }
+                .date{
+                    display:block;
+                    font-size: .8em;
+                    font-family: $pontano;
+                }
+            }
+        }
+
+        .button{
+            margin-top: 3rem;
+            border-color:black;
+            font-weight:bold;
+            &:hover{
+                border-color:black;
+                background: transparent;
+            }
+        }
+    }
+   
+}

@@ -1,0 +1,90 @@
+header{
+    .home &{
+        height:100vh;
+    }
+
+    &.short{
+        background-image: url('../images/header_2.jpg');
+        background-attachment:unset;
+    }
+
+    &.artist, &.article{
+        background:black;
+    }
+
+    background:transparent;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    position:relative;
+    .centered{
+        top:50%;
+        left:50%;
+        position:absolute;
+        transform:translate(-50%,-50%);
+        text-align:center;
+        width:95%;
+        z-index:1;
+        img{
+            max-height:500px;
+            @include grid-media($tablet){
+                max-height:400px;
+            }
+            @media (max-height: 750px){
+                max-height:275px;
+            }
+            @media (max-height: 500px){
+                max-height:200px;
+            }
+        }
+        h1{
+            font-size: 4em;
+            margin:0;
+            color:white;
+            font-family: $poor-richard;
+            @include grid-media($tablet){
+                font-size: 2.5em;
+            }
+            @include grid-media($mobile){
+                font-size: 2em;
+            }
+        }
+    }
+
+    .title{
+        margin: 0;
+        text-align:center;
+        color:white;
+        padding: 10rem 0;
+        padding-top: calc(75px + 10rem);
+        @include grid-media($desktop-medium){
+            padding-top: calc(67px + 10rem);
+        }
+        @include grid-media($desktop-small){
+            padding: calc(60px + 6rem) 0 6rem;
+        }
+        @include grid-media($tablet){
+            font-size:2em;
+        }
+    }
+
+    .slides{
+        position:absolute;
+        z-index:-1;
+        top:0;left:0;right:0;bottom:0;
+    }
+    .slide{
+        position:absolute;
+        background-size:cover;
+        background-position:center;
+        background-attachment:fixed;
+        top:0;left:0;right:0;bottom:0;
+        z-index:-1;
+        opacity:0;
+        transition: .5s opacity ease-in-out;
+        &.active{
+            opacity:1;
+        }
+        
+    }
+}

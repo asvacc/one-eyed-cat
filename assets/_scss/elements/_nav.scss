@@ -1,0 +1,107 @@
+nav{
+    @include clearfix;
+    background: rgba(0,0,0,.4);
+    z-index:15;
+
+    &.desktop-nav{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+    }
+
+    &.headhesive{
+        background:black;
+        position:fixed;
+        width:100%;
+        z-index:50;
+        transform:translateY(-110%);
+        transition: .3s transform ease-in-out;
+        &.headhesive--unstick{
+            transform:translateY(-110%);
+        }
+        &.headhesive--stick{
+            transform:translateY(0%);
+        }
+    }
+    .container{
+        @include grid-media($tablet){
+            position:relative;
+        }
+        > .desktop-menu{
+            float:right;
+            @include grid-media($tablet){
+                display:none;
+            }
+            ul{
+                margin:0;
+                padding:0;
+                list-style-type:none;
+                li{
+                    display:inline-block;
+                    a{
+                        padding: 1em;
+                        font-size:1em;
+                        font-family: $stint;    
+                        color:white;
+                        text-decoration: none;
+                        border-bottom: 1px solid transparent;
+                        display:block;
+                        @include grid-media($desktop-medium){
+                            padding: 1em .5em;
+                        }
+                        @include grid-media($desktop-medium){
+                            padding: 1em .5em;
+                            font-size: .9em;
+                        }
+                        @include grid-media($desktop-small){
+                            padding: 1em .35em;
+                            font-size: .8em;
+                        }
+                        &:hover{
+                            border-bottom:1px solid white;
+                        }
+                        &.active{
+                            border-bottom:1px solid white;
+                        }
+                    }
+                }
+            }
+        }
+        > .burger{
+            position:absolute;
+            display:none;
+            @include grid-media($tablet){
+                display:block;
+            }
+            top:50%;
+            right:-0;
+            transform:translateY(-50%);
+            padding: 10px 0 10px 10px;
+            cursor:pointer;
+            .burger-icon{
+                @include burger(25px, 2px, 6px, white);
+            } 
+    
+            &.active{
+                .burger-icon{
+                    @include burger-to-cross;
+                }
+            }
+        }
+
+        .logo{
+            float:left;
+            height: 75px;
+            position: relative;
+            top: 4px;
+            @include grid-media($desktop-medium){
+                height: 67px;
+            }
+            @include grid-media($desktop-small){
+                height: 60px;
+            }
+        }
+    }
+  
+}

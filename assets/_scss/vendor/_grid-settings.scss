@@ -1,0 +1,43 @@
+@import "neat/neat";
+
+// Change the grid settings
+$column: 116px;
+$gutter: 20px;
+$grid-columns: 12;
+$max-width: 1400px;
+
+// Define your breakpoints
+$desktop-large: (
+media: "(max-width:1400px)",
+columns: 12
+);
+
+$desktop-medium: (
+media: "(max-width:1180px)",
+columns: 12
+);
+
+$desktop-small: (
+media: "(max-width:960px)",
+columns: 12
+);
+
+$tablet: (
+media: "(max-width:750px)",
+columns: 8
+);
+
+$mobile: (
+columns: 4,
+media: "(max-width:480px)"
+);
+
+$mobile-m: (
+media: "(max-width:400px)",
+columns: 4
+);
+
+$tiny: (
+columns: 2,
+media: "(max-width:320px)"
+);

@@ -1,0 +1,20 @@
+html, body, *{
+    box-sizing:border-box;
+}
+
+body{
+    &.mobile-nav-active{
+        overflow:hidden;
+    }
+}
+
+.container{
+    @include grid-container;
+    max-width:1400px;
+    width:95%;
+    margin:0 auto;
+}
+
+section{
+    padding: $section-padding 0;
+}

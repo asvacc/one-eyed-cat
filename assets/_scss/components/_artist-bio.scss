@@ -1,0 +1,57 @@
+section.artist-bio{
+    background:black;
+    .container{
+        display:table;
+        .left, .right{
+            display:table-cell;
+            vertical-align: middle;
+        }
+        .left{
+            text-align:center;
+            width:40%;
+            img{
+                max-width:95%;
+            }
+            @include grid-media($desktop-small){
+                width:50%;
+            }
+            @include grid-media($tablet){
+                display:block;
+                width:100%;
+                img{
+                    max-height:400px;
+                }
+            }
+        }
+        .right{
+            width:60%;
+            padding-left:5%;
+            color:white;
+            @include grid-media($desktop-small){
+                width:50%;
+                padding-left:3%;
+                p{
+                    font-size:1em;
+                }
+            }
+            @include grid-media($tablet){
+                display:block;
+                width:100%;
+                margin-top: 2rem;
+            }
+            h2{
+                margin-top:0;
+                margin-bottom:.75em;
+                @include grid-media($tablet){
+                    font-size:2em;
+                }
+            }
+            p{
+                margin-top:0;
+                & + p{
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+}

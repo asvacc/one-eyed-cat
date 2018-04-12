@@ -1,0 +1,36 @@
+section.instagram{
+    background-color: black;
+    .container{
+        h2{
+            text-align:center;
+            color:white;
+            margin-bottom:2em;
+        }
+        .grid{
+            @include grid-container;
+            a{
+                @include grid-column(2);
+
+                img{
+                    filter: grayscale(100%);
+                    transition: .15s filter ease-in-out;
+                }
+                &:hover{
+                    img{
+                        filter:grayscale(0);
+                    }
+                }
+
+                &:nth-of-type(n+7){
+                    margin-top: 1em;
+                }
+            }
+        }
+        .centered{
+            text-align:center;
+        }
+        .button{
+            margin-top: 3em;
+        }
+    }
+}

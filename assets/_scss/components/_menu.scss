@@ -1,0 +1,66 @@
+.menu{
+    h2{
+        margin-top:0;
+        margin-bottom:0;
+        text-align:center;
+    }
+    
+    > .row{
+        margin-top: 3em;
+        @include grid-media($tablet){
+            margin-top: 1em;
+        }
+
+
+        .container{
+            .menu-section-heading{
+                text-transform:uppercase;
+                text-align:center;
+                margin-top:0;
+                background:black;
+                color:white;
+                padding:1em;
+            }
+
+            .left, .right{
+                @include grid-column(6);
+                @include grid-media($tablet){
+                    width:100%;
+                    display:block;
+                    margin-left:0;
+                }
+                .row{
+                    @include clearfix;
+                    width:100%;
+                    padding: 1em .5em;
+                    @include grid-media($tablet){
+                        padding:1em 0;
+                    }
+                    .left{
+                        @include grid-column(9);
+                        h5{
+                            margin-top:0;
+                            margin-bottom: .5em;
+                        }
+                        p{
+                            margin:0;
+                            @include grid-media($tablet){
+                                font-size:1em;
+                                line-height: 1.5;
+                            }
+                        }
+                    }
+                    .right{
+                        text-align:right;
+                        @include grid-column(3);
+                        font-size: 1.125em;
+                        font-family: $stint;
+                        @include grid-media($tablet){
+                            font-size:1em;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}

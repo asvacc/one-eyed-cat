@@ -1,0 +1,24 @@
+.button{
+    display:inline-block;
+    padding: .5em 1em;
+    background:black;
+    border:3px solid white;
+    text-align:center;
+    color:white;
+    text-decoration:none;
+    font-family: $stint;
+    font-weight:bold;
+    text-transform:uppercase;
+    font-size: .9em;
+    transition: .15s all ease-in-out;
+    &:hover{
+        background:white;
+        color:black;
+    }
+    &.light{
+        border: 3px solid black;
+        &:hover{
+            background:white;
+        }
+    }
+}
