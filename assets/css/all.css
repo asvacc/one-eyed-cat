@@ -482,7 +482,7 @@ header {
   .home header {
     height: 100vh; }
   header.short {
-    background-image: url("../images/header_2.jpg");
+    background-color: #111;
     background-attachment: unset; }
   header.artist, header.article {
     background: black; }
@@ -692,17 +692,17 @@ nav {
         font-size: .9em;
         font-family: "Stint Ultra Expanded", cursive;
         text-decoration: none; }
-      .mobile-nav ul li ul {
-        text-align: center; }
-        .mobile-nav ul li ul:after {
-          content: "";
-          display: table;
-          clear: both; }
-        .mobile-nav ul li ul li {
-          display: inline-block;
-          font-size: .8em; }
-          .mobile-nav ul li ul li + li {
-            margin-left: 6px; }
+  .mobile-nav #mobile-menu-icons {
+    text-align: center; }
+    .mobile-nav #mobile-menu-icons:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .mobile-nav #mobile-menu-icons li {
+      display: inline-block;
+      font-size: 1em; }
+      .mobile-nav #mobile-menu-icons li + li {
+        margin-left: 6px; }
 
 .headhesive--stick + .wrapper .mobile-nav {
   background: black; }
@@ -1099,6 +1099,39 @@ footer .facebook #cff {
       footer .facebook #cff .cff-item .cff-shared-link .cff-link-title a {
         font-family: "Stint Ultra Expanded", cursive; }
 
+.wpcf7 p {
+  font-family: "Pontano Sans", sans-serif;
+  text-align: left; }
+  .wpcf7 p label {
+    font-family: "Stint Ultra Expanded", cursive; }
+  .wpcf7 p input, .wpcf7 p textarea {
+    width: 100%;
+    font-family: "Pontano Sans", sans-serif;
+    padding: .25em; }
+  .wpcf7 p input[type=submit] {
+    width: auto;
+    font-family: "Stint Ultra Expanded", cursive;
+    padding: .5em 2em;
+    background: black;
+    border: 3px solid black;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-family: "Stint Ultra Expanded", cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .9em;
+    transition: .15s all ease-in-out; }
+    .wpcf7 p input[type=submit]:hover {
+      background: white;
+      color: black;
+      cursor: pointer; }
+  .wpcf7 p:last-of-type {
+    text-align: center; }
+
+.wpcf7 .wpcf7-response-output {
+  border: 0; }
+
 .map {
   padding: 0;
   background: white; }
@@ -1283,17 +1316,19 @@ section.social-media {
         padding: .5em .5em .5em 1em;
         color: white;
         transition: .15s background ease-in-out; }
-        .where-to-find-us .container .left ul li:nth-of-type(odd), .where-to-find-us .container .right ul li:nth-of-type(odd) {
-          background: #070707; }
         .where-to-find-us .container .left ul li:hover, .where-to-find-us .container .right ul li:hover {
           background: #222; }
         @media (max-width: 480px) {
           .where-to-find-us .container .left ul li, .where-to-find-us .container .right ul li {
             font-size: .9em; } }
+  .where-to-find-us .container li:nth-of-type(odd) {
+    background: #070707; }
 
 .wysiwyg.black {
   background: black;
   color: white; }
+  .wysiwyg.black * {
+    color: white; }
 
 .wysiwyg .container {
   text-align: center;
@@ -1318,5 +1353,12 @@ section.social-media {
     @media (max-width: 480px) {
       .wysiwyg .container .button {
         display: block; } }
+    .wysiwyg .container .button:hover {
+      color: black; }
+
+.wysiwyg.white .button {
+  border: 3px solid black; }
+  .wysiwyg.white .button:hover {
+    color: black; }
 
 /*# sourceMappingURL=all.css.map */

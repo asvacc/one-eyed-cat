@@ -29,16 +29,16 @@
                 font-family: $stint;
                 text-decoration:none;
             }
-            ul{
-                @include clearfix;
-                text-align:center;
-                li{
-                    display:inline-block;
-                    font-size: .8em;
-                    & + li{
-                        margin-left: 6px;
-                    }
-                }
+        }
+    }
+    #mobile-menu-icons{
+        @include clearfix;
+        text-align:center;
+        li{
+            display:inline-block;
+            font-size: 1em;
+            & + li{
+                margin-left: 6px;
             }
         }
     }

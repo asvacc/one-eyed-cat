@@ -1,0 +1,41 @@
+.wpcf7{
+    p{
+        font-family: $pontano;
+        text-align:left;
+        label{
+            font-family: $stint;
+        }
+        input,textarea{
+            width:100%;
+            font-family: $pontano;
+            padding: .25em;
+        }
+        input[type=submit]{
+            width:auto;
+            font-family: $stint;
+            padding: .5em 2em;
+            background:black;
+            border:3px solid black;
+            text-align:center;
+            color:white;
+            text-decoration:none;
+            font-family: $stint;
+            font-weight:bold;
+            text-transform:uppercase;
+            font-size: .9em;
+            transition: .15s all ease-in-out;
+            
+            &:hover{
+                background:white;
+                color:black;
+                cursor:pointer;
+            }
+        }
+        &:last-of-type{
+            text-align:center;
+        }
+    }
+    .wpcf7-response-output{
+        border:0;
+    }
+}

@@ -3,10 +3,12 @@
 use OneEyedCat\Core\Models\Wysiwyg\Section as Wysiwyg;
 use OneEyedCat\Core\Models\CTA\Section as CTA;
 use OneEyedCat\Core\Models\Map\Section as Map;
+use OneEyedCat\Core\Models\ListSection\Section as ListSection;
+use OneEyedCat\Core\Models\Menu\Section as Menu;
 
 class Sections
 {
-    static function render($postId = null){
+    static function render(){
         global $post;
 
         if(have_rows('sections', $post->id)){
@@ -22,6 +24,12 @@ class Sections
                         break;
                     case 'map':
                         Map::render();
+                        break;
+                    case 'list':
+                        ListSection::render();
+                        break;
+                    case 'menu':
+                        Menu::render();
                         break;
                 }
             }

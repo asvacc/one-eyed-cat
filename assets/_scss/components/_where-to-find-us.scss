@@ -10,6 +10,9 @@
                 font-size: 2em;
             }
         }
+
+
+        
         .left, .right{
             @include grid-column(6);
             @include grid-media($mobile){
@@ -20,9 +23,7 @@
                 padding:0;
                 margin:0;
                 li{
-                    &:nth-of-type(odd){
-                        background: $darker-gray;
-                    }
+                    
                     font-family: $pontano;
                     padding: .5em .5em .5em 1em;
                     color:white;
@@ -36,6 +37,12 @@
                         font-size: .9em;
                     }
                 }
+            }
+        }
+
+        li{
+            &:nth-of-type(odd){
+                background: $darker-gray;
             }
         }
     }
