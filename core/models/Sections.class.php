@@ -5,6 +5,7 @@ use OneEyedCat\Core\Models\CTA\Section as CTA;
 use OneEyedCat\Core\Models\Map\Section as Map;
 use OneEyedCat\Core\Models\ListSection\Section as ListSection;
 use OneEyedCat\Core\Models\Menu\Section as Menu;
+use OneEyedCat\Core\Models\Event\Section as Event;
 
 class Sections
 {
@@ -31,6 +32,7 @@ class Sections
                     case 'menu':
                         Menu::render();
                         break;
+                        
                 }
             }
         }
