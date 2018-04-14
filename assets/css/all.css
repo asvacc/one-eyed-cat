@@ -814,7 +814,8 @@ footer {
     text-align: center;
     font-family: "Pontano Sans", sans-serif;
     text-transform: uppercase;
-    margin-top: 2rem; }
+    margin-top: 3rem;
+    margin-bottom: 0; }
 
 ._404 {
   background: black; }
@@ -938,7 +939,7 @@ section.artist-bio {
       vertical-align: middle; }
     .beer-list .row .left {
       width: 30%;
-      background-image: url("../images/beer_2.jpg");
+      background-image: url("../images/default_background_square.jpg");
       background-size: cover;
       background-position: center;
       transition: .15s opacity ease-in-out;
@@ -1034,7 +1035,7 @@ section.artist-bio {
       float: left;
       margin-left: 20px;
       text-align: center;
-      background-image: url("../images/craft beer mugs.jpg");
+      background-image: url("../images/default_background.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center; }
@@ -1110,6 +1111,18 @@ footer .facebook .cff-likebox {
   footer .facebook .cff-likebox .fb_iframe_widget span {
     width: 300px !important; }
 
+footer .facebook .cff-header {
+  color: white;
+  margin-top: 0;
+  font-size: 24px;
+  margin-bottom: .85em; }
+  footer .facebook .cff-header i {
+    display: none;
+    font-family: 'Font Awesome\ 5 Brands'; }
+  @media (max-width: 750px) {
+    footer .facebook .cff-header {
+      font-size: 20px; } }
+
 footer .facebook #cff {
   float: none;
   color: white; }
@@ -1175,8 +1188,6 @@ footer .facebook #cff {
   padding: 0;
   background: white; }
   .map #map {
-    background: url("../images/map.png");
-    background-size: cover;
     height: 400px; }
 
 .menu h2 {
