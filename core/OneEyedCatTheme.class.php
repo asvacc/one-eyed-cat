@@ -18,6 +18,7 @@ class OneEyedCatTheme
         add_action('widgets_init', array(__CLASS__, 'register_widgets') );
         add_action('init', array('\OneEyedCat\Core\Models\Setup', 'init'));
         add_action('init', array(__CLASS__, 'initialize_other'));
+        add_action('init', array(__CLASS__, 'initialize_acf'));
     }
 
     public function register_menus(){
@@ -93,7 +94,14 @@ class OneEyedCatTheme
      * Initialize custom posts types
      */
     public function initialize_acf(){
-     
+        acf_add_options_page(array(
+            'page_title' 	=> 'Theme Settings',
+            'menu_title'	=> 'Theme Settings',
+            'menu_slug' 	=> 'theme-general-settings',
+            'capability'	=> 'edit_posts',
+            'redirect'		=> false
+        ));
+       
     }
 
     public function initialize_other(){
