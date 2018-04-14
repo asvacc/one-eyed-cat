@@ -78,6 +78,13 @@ section.social-media{
                     }
                 }
             }
+            &.youtube{
+                a{
+                    &:after{
+                    content:'\f167';
+                    }
+                }
+            }
         }
     }
 }

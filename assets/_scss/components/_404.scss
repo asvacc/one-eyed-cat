@@ -1,0 +1,25 @@
+._404{
+    background:black;
+    .container{
+        text-align:center;
+        img{
+            max-height:500px;
+            @include grid-media($tablet){
+                max-height:400px;
+            }
+            @media (max-height: 750px){
+                max-height:275px;
+            }
+            @media (max-height: 500px){
+                max-height:200px;
+            }
+        }
+        h2{
+            color:white;
+            margin-bottom:0;
+            @include grid-media($tablet){
+                font-size: 1.5em;
+            }
+        }
+    }
+}

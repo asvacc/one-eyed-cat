@@ -11,6 +11,7 @@ $title = get_the_title();
 use OneEyedCat\Core\Models\Beer\Model as Beer;
 
 $customizations = get_field('page_customizations');
+$topText = get_field('top_content');
 
 $beers = array();
 $mainstays = get_field('mainstays');
@@ -32,10 +33,22 @@ if($seasonals){
 <header class="short" <?php echo empty($customizations['header_background']) ? "" :  "style=\"background-image:url(".$customizations['header_background'].");\"";?>>
     <h1 class="title"><?php echo $title;?></h1>
 </header>
+<?php if(!empty($topText)) : ?>
 <section class="wysiwyg black">
     <div class="container">
-        <a href="#mainstays" class="button">Mainstays</a>
-        <a href="#seasonals" class="button">Seasonals</a>
+        <?php echo $topText;?>
+    </div>
+</section>
+<?php endif;?>
+<section class="wysiwyg black">
+    <div class="container">
+    <?php if(count($beers['mainstays']) > 0): ?>
+        <a href="#mainstays" class="button no-padding">Mainstays</a>
+<?php endif; ?>
+
+<?php if(count($beers['seasonals']) > 0): ?>
+        <a href="#seasonals" class="button no-padding">Seasonals</a>
+<?php endif;?>
     </div>
 </section>
 <?php if(count($beers['mainstays']) > 0): ?>
