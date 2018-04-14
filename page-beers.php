@@ -42,16 +42,16 @@ if($seasonals){
 <?php endif;?>
 <section class="wysiwyg black">
     <div class="container">
-    <?php if(count($beers['mainstays']) > 0): ?>
+    <?php if(!empty($beers['mainstays']) && count($beers['mainstays']) > 0): ?>
         <a href="#mainstays" class="button no-padding">Mainstays</a>
 <?php endif; ?>
 
-<?php if(count($beers['seasonals']) > 0): ?>
+<?php if(!empty($beers['seasonals']) && count($beers['seasonals']) > 0): ?>
         <a href="#seasonals" class="button no-padding">Seasonals</a>
 <?php endif;?>
     </div>
 </section>
-<?php if(count($beers['mainstays']) > 0): ?>
+<?php if(!empty($beers['mainstays']) && count($beers['mainstays']) > 0): ?>
 <section class="beer-list" id="mainstays">
     <div class="container">
         <h2 class="title">The Mainstays</h2>
@@ -59,9 +59,15 @@ if($seasonals){
     <?php foreach($beers['mainstays'] as $beer) :?>
     <div class="row">
         <div class="container">
-            <a href="<?php echo $beer->artist->permalink;?>" class="left">
-            
-            </a>
+        <?php if(!empty($beer->artist)): ?>
+                <a href="<?php echo $beer->artist->permalink;?>" <?php echo empty($beer->artist->image['url']) ? "" : "style='background-image: url(". $beer->artist->image['url'] . ")'";?> class="left">
+                
+                </a>
+            <?php else: ?>
+                <div class="left" <?php echo empty($beer->image['url']) ? "" : "style='background-image: url(". $beer->image['url'] . ")'";?>>
+                
+                </div>
+            <?php endif;?>
             <div class="right">
                 <h2 class="beer-name"><?php echo $beer->title;?></h2>
                 <h4 class="beer-type"><?php echo $beer->type;?></h4>
@@ -90,7 +96,7 @@ if($seasonals){
 </section>  
 <?php endif; ?>
 
-<?php if(count($beers['seasonals']) > 0): ?>
+<?php if(!empty($beers['seasonals']) && count($beers['seasonals']) > 0): ?>
 <section class="beer-list" id="seasonals">
     <div class="container">
         <h2 class="title">Seasonal Beers</h2>
@@ -98,9 +104,16 @@ if($seasonals){
     <?php foreach($beers['seasonals'] as $beer) :?>
     <div class="row">
         <div class="container">
-            <a href="<?php echo $beer->artist->permalink;?>" class="left">
-            
-            </a>
+            <?php if(!empty($beer->artist)): ?>
+                <a href="<?php echo $beer->artist->permalink;?>" <?php echo empty($beer->artist->image['url']) ? "" : "style='background-image: url(". $beer->artist->image['url'] . ")'";?> class="left">
+                
+                </a>
+            <?php else: ?>
+                <div class="left" <?php echo empty($beer->image['url']) ? "" : "style='background-image: url(". $beer->image['url'] . ")'";?>>
+                
+                </div>
+            <?php endif;?>
+
             <div class="right">
                 <h2 class="beer-name"><?php echo $beer->title;?></h2>
                 <h4 class="beer-type"><?php echo $beer->type;?></h4>

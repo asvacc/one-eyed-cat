@@ -11,8 +11,11 @@ class Model
     public $abv;
     public $ibu;
     public $artist;
+    public $image;
 
     function __construct($beer){
+
+
         $beerId = is_object($beer) ? $beer->ID : $beer;
         $beer = is_object($beer) ? $beer : get_post($beerId);
 
@@ -22,6 +25,11 @@ class Model
         $this->permalink = get_the_permalink();
         $this->abv = get_field('abv');
         $this->ibu = get_field('ibu');
-        $this->artist = new Artist(get_field('artist'));
+        $this->image = get_field('image');
+
+        $post = get_field('artist', $beer->ID);
+        if($post){
+            $this->artist = new Artist(get_field('artist'));
+        }
     }
 }

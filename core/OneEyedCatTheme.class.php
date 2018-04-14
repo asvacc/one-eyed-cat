@@ -255,6 +255,30 @@ class OneEyedCatTheme
                 'title' => 'Beer',
                 'fields' => array(
                     array(
+                        'key' => 'field_5ad23b9fc28bd',
+                        'label' => 'Image',
+                        'name' => 'image',
+                        'type' => 'image',
+                        'instructions' => 'This won\'t be used if the Artist is populated.',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'return_format' => 'array',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                        'min_width' => '',
+                        'min_height' => '',
+                        'min_size' => '',
+                        'max_width' => '',
+                        'max_height' => '',
+                        'max_size' => '',
+                        'mime_types' => '',
+                    ),
+                    array(
                         'key' => 'field_5ad13d52a97d5',
                         'label' => 'Beer Type',
                         'name' => 'beer_type',
@@ -340,7 +364,7 @@ class OneEyedCatTheme
                         'name' => 'artist',
                         'type' => 'post_object',
                         'instructions' => '',
-                        'required' => 1,
+                        'required' => 0,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -352,9 +376,9 @@ class OneEyedCatTheme
                         ),
                         'taxonomy' => array(
                         ),
-                        'allow_null' => 0,
+                        'allow_null' => 1,
                         'multiple' => 0,
-                        'return_format' => 'object',
+                        'return_format' => 'id',
                         'ui' => 1,
                     ),
                 ),
@@ -487,7 +511,9 @@ class OneEyedCatTheme
                 'style' => 'default',
                 'label_placement' => 'top',
                 'instruction_placement' => 'label',
-                'hide_on_screen' => '',
+                'hide_on_screen' => array(
+                    0 => 'the_content',
+                ),
                 'active' => 1,
                 'description' => '',
             ));
@@ -1296,10 +1322,13 @@ class OneEyedCatTheme
                 'style' => 'seamless',
                 'label_placement' => 'top',
                 'instruction_placement' => 'label',
-                'hide_on_screen' => '',
+                'hide_on_screen' => array(
+                    0 => 'the_content',
+                ),
                 'active' => 1,
                 'description' => '',
             ));
+            
             endif;
     }
 
