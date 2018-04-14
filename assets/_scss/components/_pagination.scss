@@ -1,0 +1,33 @@
+.pagination.navigation{
+    background:none;
+    margin-top:2rem;
+
+    .nav-links{
+        > *{
+            font-family: $pontano;
+            text-decoration:none;
+            font-size: 1.125em;
+            display:inline-block;
+            border: 3px solid black;
+            border-left:0;
+            line-height: 1.7;
+            padding: .25em .75em;
+            margin-left:-4px;
+            font-weight:bold;
+            color: black;
+            transition: .15s all ease-in-out;
+            &:hover{
+                background:black;
+                color:white;
+            }
+            &.current{
+                background:black;
+                color:white;
+            }
+            &:nth-child(1){
+                border-left: 3px solid black;
+            }
+            
+        }
+    }
+}

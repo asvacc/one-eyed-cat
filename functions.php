@@ -10,5 +10,4 @@ use OneEyedCat\Core\OneEyedCatTheme as ThemeSetup;
 
 add_action('after_setup_theme', function(){
 	ThemeSetup::init();
-	add_filter('show_admin_bar', '__return_false'); //delete later
 });

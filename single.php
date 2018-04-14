@@ -8,30 +8,29 @@
  */
 
 get_header();
+
+setup_postdata(get_the_id());
+
+$featuredImage = get_the_post_thumbnail_url(get_the_ID(),'full');
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<header class="short" <?php echo !empty($featuredImage) ? "style='background-image:url($featuredImage)'" : "";?>)>
+    <h1 class="title"><?php the_title();?></h1>
+</header>
+<section class="event-details">
+    <div class="container">
+    <h4><?php the_date();?></h4>
+    <div class="event-description">
+        <?php the_content(); ?>                            
+    </div>
+    </div>
+</section>
+<section class="article-button">
+    <div class="container">
+        <a href="#" onclick="window.history.go(-1)" class="button">Go Back</a>
+    </div>
+</section>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -19,6 +19,6 @@ section{
     padding: $section-padding 0;
 }
 
-.content{
-    
+.clearfix{
+    @include clearfix;
 }

@@ -1,17 +1,19 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all events
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package One_Eyed_Cat_Brewing
  */
 
+use OneEyedCat\Core\Models\Event\Event as Event;
+
 get_header();
 
-$event = new OneEyedCat\Core\Models\Event\Model(get_the_id());
+$event = new Event(get_the_id());
 ?>
-<header class="short" style="background-image:url('<?php echo $event->image['url'];?>')">
+<header class="short" <?php echo empty($event->image['url']) ? "" : "style='background-image:url(".$event->image['url'].")'";?>>
     <h1 class="title"><?php echo $event->title;?></h1>
 </header>
 <section class="event-details">

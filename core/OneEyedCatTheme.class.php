@@ -11,11 +11,13 @@ class OneEyedCatTheme
     public function __construct() { }
 
     public function Init(){
+        add_theme_support( 'post-thumbnails' );
         add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_scripts'));
         add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_styles'));
         add_action('init', array(__CLASS__, 'register_menus') );
         add_action('widgets_init', array(__CLASS__, 'register_widgets') );
         add_action('init', array('\OneEyedCat\Core\Models\Setup', 'init'));
+        add_action('init', array(__CLASS__, 'initialize_other'));
     }
 
     public function register_menus(){
@@ -94,5 +96,11 @@ class OneEyedCatTheme
      
     }
 
-
+    public function initialize_other(){
+        add_action('navigation_markup_template', function($content){
+            $content = str_replace('role="navigation"', '', $content);
+            $content = preg_replace('#<h2([^>]*)>(.*)</h2>#m', '', $content);
+            return $content;
+        });
+    }
 }

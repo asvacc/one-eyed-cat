@@ -1,59 +1,52 @@
 <?php
 /**
- * The main template file
+ * Template Name: News
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package One_Eyed_Cat_Brewing
+ * @package WordPress
  */
-
 get_header();
+
+$customizations = get_field('page_customizations');
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<header class="short" <?php echo empty($customizations['header_background']) ? "" :  "style=\"background-image:url(".$customizations['header_background'].");\"";?>>
+    <h1 class="title"><?php echo single_post_title(); ?></h1>
+</header>
+<section class="events">
+    <div class="container">
+<?php
 
-		<?php
-		if ( have_posts() ) :
+if ( have_posts() ) :
+    ?> 
+    <div class="clearfix">
+        <?php 
+    while ( have_posts() ) :
+        the_post();
+        $featuredImage = get_the_post_thumbnail_url(get_the_ID(),'full');
+        ?>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+         <div class="event" <?php echo empty($featuredImage) ? "" : 'style="background-image:url('.$featuredImage.')"';?>> 
+                <a href='<?php the_permalink(); ?>'>
+                    <div class="bottom">
+                        <span class="title"><?php the_title(); ?></span>
+                        <span class="date"><?php the_date(); ?></span>
+                    </div>
+                </a>
+            </div>
+            <?php
+    endwhile;
+    ?> 
+    </div>
+    <?php
+    the_posts_pagination( array(
+        'mid_size'  => 3,
+        'prev_text' => __( '<i class="fas fa-chevron-left"></i>', 'textdomain' ),
+        'next_text' => __( '<i class="fas fa-chevron-right"></i>', 'textdomain' )
+    ) );
+endif;
+?>
+</div>
+</section>
 
 <?php
-get_sidebar();
-get_footer();
+get_footer(); 

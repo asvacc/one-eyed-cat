@@ -56,13 +56,22 @@ nav{
                         }
                         @include grid-media($desktop-small){
                             padding: 1em .35em;
-                            font-size: .8em;
+                            font-size: .75em;
                         }
                         &:hover{
                             border-bottom:1px solid white;
                         }
                         &.active{
                             border-bottom:1px solid white;
+                        }
+                    }
+                    &:nth-last-of-type(-n+4){
+                        a{
+                            padding: 1em .5em;
+                            @include grid-media($desktop-small){
+                                padding: 1em .25em;
+                                font-size: .75em;
+                            }
                         }
                     }
                 }
@@ -99,7 +108,7 @@ nav{
                 height: 67px;
             }
             @include grid-media($desktop-small){
-                height: 60px;
+                height: 56px;
             }
         }
     }

@@ -2,6 +2,25 @@
 
 class Model
 {
+    public $events;
+    public $title;
+    public $linkText;
+    public $linkUrl;
+
+    function __construct($title, $linkText, $linkUrl, $posts){
+        $this->title = $title;
+        $this->linkText = $linkText;
+        $this->linkUrl = $linkUrl;
+        $events = array();
+        foreach($posts as $post){
+            $events[] = new Event($post);
+        }
+        $this->events = $events;
+    }
+}
+
+class Event
+{
     public $image;
     public $date;
     public $details;

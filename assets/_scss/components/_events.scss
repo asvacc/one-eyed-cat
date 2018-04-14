@@ -48,11 +48,17 @@
                 .title{
                     font-size: .95em;
                     display:block;
+                    overflow:hidden;
+                    white-space:pre;
+                    text-overflow:ellipsis;
                 }
                 .date{
                     display:block;
                     font-size: .8em;
                     font-family: $pontano;
+                    overflow:hidden;
+                    white-space:pre;
+                    text-overflow:ellipsis;
                 }
             }
         }

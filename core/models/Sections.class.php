@@ -6,6 +6,8 @@ use OneEyedCat\Core\Models\Map\Section as Map;
 use OneEyedCat\Core\Models\ListSection\Section as ListSection;
 use OneEyedCat\Core\Models\Menu\Section as Menu;
 use OneEyedCat\Core\Models\Event\Section as Event;
+use OneEyedCat\Core\Models\Beer\Section as Beer;
+use OneEyedCat\Core\Models\Artist\Section as Artist;
 
 class Sections
 {
@@ -32,7 +34,8 @@ class Sections
                     case 'menu':
                         Menu::render();
                         break;
-                        
+                    case 'upcoming_events':
+                        Event::render_upcoming_event();
                 }
             }
         }

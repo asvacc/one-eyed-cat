@@ -19,7 +19,7 @@ class Setup
      * component.
      *
      * @return void
-     */
+     */ 
     private static function register_hooks() {
 
     }

@@ -452,6 +452,11 @@ body.mobile-nav-active {
 section {
   padding: 4rem 0; }
 
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 .button {
   display: inline-block;
   padding: .5em 1em;
@@ -527,7 +532,7 @@ header {
         padding-top: calc(67px + 10rem); } }
     @media (max-width: 960px) {
       header .title {
-        padding: calc(60px + 6rem) 0 6rem; } }
+        padding: calc(56px + 6rem) 0 6rem; } }
     @media (max-width: 750px) {
       header .title {
         font-size: 2em; } }
@@ -608,11 +613,17 @@ nav {
           @media (max-width: 960px) {
             nav .container > .desktop-menu ul li a {
               padding: 1em .35em;
-              font-size: .8em; } }
+              font-size: .75em; } }
           nav .container > .desktop-menu ul li a:hover {
             border-bottom: 1px solid white; }
           nav .container > .desktop-menu ul li a.active {
             border-bottom: 1px solid white; }
+        nav .container > .desktop-menu ul li:nth-last-of-type(-n+4) a {
+          padding: 1em .5em; }
+          @media (max-width: 960px) {
+            nav .container > .desktop-menu ul li:nth-last-of-type(-n+4) a {
+              padding: 1em .25em;
+              font-size: .75em; } }
   nav .container > .burger {
     position: absolute;
     display: none;
@@ -663,7 +674,7 @@ nav {
         height: 67px; } }
     @media (max-width: 960px) {
       nav .container .logo {
-        height: 60px; } }
+        height: 56px; } }
 
 .mobile-nav {
   display: none;
@@ -673,7 +684,7 @@ nav {
   right: 0;
   transform: translateX(100%);
   transition: .15s transform ease-in-out, .15s background ease-in-out;
-  top: 60px;
+  top: 56px;
   height: 100%; }
   .mobile-nav.active {
     transform: translateX(0); }
@@ -1037,11 +1048,17 @@ section.artist-bio {
         color: white; }
         .events .container .event .bottom .title {
           font-size: .95em;
-          display: block; }
+          display: block;
+          overflow: hidden;
+          white-space: pre;
+          text-overflow: ellipsis; }
         .events .container .event .bottom .date {
           display: block;
           font-size: .8em;
-          font-family: "Pontano Sans", sans-serif; }
+          font-family: "Pontano Sans", sans-serif;
+          overflow: hidden;
+          white-space: pre;
+          text-overflow: ellipsis; }
     .events .container .button {
       margin-top: 3rem;
       border-color: black;
@@ -1199,6 +1216,31 @@ footer .facebook #cff {
         @media (max-width: 750px) {
           .menu > .row .container .left .row .right, .menu > .row .container .right .row .right {
             font-size: 1em; } }
+
+.pagination.navigation {
+  background: none;
+  margin-top: 2rem; }
+  .pagination.navigation .nav-links > * {
+    font-family: "Pontano Sans", sans-serif;
+    text-decoration: none;
+    font-size: 1.125em;
+    display: inline-block;
+    border: 3px solid black;
+    border-left: 0;
+    line-height: 1.7;
+    padding: .25em .75em;
+    margin-left: -4px;
+    font-weight: bold;
+    color: black;
+    transition: .15s all ease-in-out; }
+    .pagination.navigation .nav-links > *:hover {
+      background: black;
+      color: white; }
+    .pagination.navigation .nav-links > *.current {
+      background: black;
+      color: white; }
+    .pagination.navigation .nav-links > *:nth-child(1) {
+      border-left: 3px solid black; }
 
 header .controls {
   z-index: 1;

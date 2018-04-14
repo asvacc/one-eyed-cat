@@ -37,7 +37,7 @@
 	</nav>
 	<nav class="desktop-nav">
 		<div class="container">
-			<img src="<?php echo TEMPLATE_DIR_URI . '/images/logo_with_text.png';?>" alt="Logo" class="logo">
+			<a href="<?php echo get_site_url();?>"><img src="<?php echo TEMPLATE_DIR_URI . '/images/logo_with_text.png';?>" alt="Logo" class="logo"></a>
 			<div class="desktop-menu">
 				<?php
 					wp_nav_menu( array(
