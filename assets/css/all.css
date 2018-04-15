@@ -1116,14 +1116,15 @@ footer .facebook .cff-likebox {
 footer .facebook .cff-header {
   color: white;
   margin-top: 0;
-  font-size: 24px;
+  line-height: 1.7;
+  font-size: 27px;
   margin-bottom: .85em; }
   footer .facebook .cff-header i {
     display: none;
     font-family: 'Font Awesome\ 5 Brands'; }
   @media (max-width: 750px) {
     footer .facebook .cff-header {
-      font-size: 20px; } }
+      font-size: 22.5px; } }
 
 footer .facebook #cff {
   float: none;
