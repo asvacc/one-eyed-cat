@@ -1029,6 +1029,8 @@ section.artist-bio {
     .events .container h2 {
       text-align: center;
       margin-top: 0; }
+    .events .container .no-padding {
+      margin: 0; }
     .events .container .event {
       display: block;
       width: calc(33.33333% - 26.66667px);
@@ -1183,6 +1185,12 @@ footer .facebook #cff {
 
 .wpcf7 .wpcf7-response-output {
   border: 0; }
+
+.wpcf7 .contact-recaptcha {
+  text-align: center; }
+  .wpcf7 .contact-recaptcha > div {
+    display: inline-block;
+    transform: translateX(-6px); }
 
 .map {
   padding: 0;
@@ -1412,6 +1420,8 @@ section.social-media {
   max-width: 800px; }
   .wysiwyg .container h2 {
     margin-top: 0; }
+    .wysiwyg .container h2.no-padding {
+      margin: 0; }
     @media (max-width: 480px) {
       .wysiwyg .container h2 {
         font-size: 2em; } }

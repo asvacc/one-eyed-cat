@@ -13,6 +13,9 @@
         max-width:800px;
         h2{
             margin-top:0;
+            &.no-padding{
+                margin:0;
+            }
             @include grid-media($mobile){
                 font-size: 2em;
             }
@@ -24,6 +27,7 @@
                 margin-top:1em;
             }
         }
+        
 
         .button{
             margin-top: 2em;

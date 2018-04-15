@@ -12,12 +12,13 @@ $customizations = get_field('page_customizations');
 <header class="short" <?php echo empty($customizations['header_background']) ? "" :  "style=\"background-image:url(".$customizations['header_background'].");\"";?>>
     <h1 class="title"><?php echo single_post_title(); ?></h1>
 </header>
-<section class="events">
-    <div class="container">
 <?php
 
 if ( have_posts() ) :
     ?> 
+    <section class="events">
+    <div class="container">
+
     <div class="clearfix">
         <?php 
     while ( have_posts() ) :
@@ -42,11 +43,19 @@ if ( have_posts() ) :
         'mid_size'  => 3,
         'prev_text' => __( '<i class="fas fa-chevron-left"></i>', 'textdomain' ),
         'next_text' => __( '<i class="fas fa-chevron-right"></i>', 'textdomain' )
-    ) );
+    ) );?>
+    </div>
+</section>
+<?php else : ?>
+<section class="wysiwyg black">
+    <div class="container">
+    <h2 class="no-padding">No news posts found.</h2>
+    </div>
+</section>
+<?php
 endif;
 ?>
-</div>
-</section>
+
 
 <?php
 get_footer(); 

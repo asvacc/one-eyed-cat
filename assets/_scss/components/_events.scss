@@ -6,6 +6,10 @@
             text-align:center;
             margin-top:0;
         }
+
+        .no-padding{
+            margin:0;
+        } 
         .event{
             display:block;
             @include grid-column(4);
