@@ -20,6 +20,11 @@
             background: black;
         }
 
+        @font-face {
+            font-family: "Poor Richard";
+            src: url("//oneeyedcatbrewing.com/wp-content/themes/one-eyed-cat-brewing/assets/fonts/poor_richard.TTF");
+        }
+
         #wrapper{
             background: black;
             position:absolute;
@@ -40,8 +45,8 @@
         }
 
         #wrapper > div img{
-            max-width:75%;
-            max-height:700px;
+            max-width:70vh;
+            max-height:50vh;
             transform: translateX(20px);
         }
 
@@ -62,6 +67,7 @@
         <div>
             <div>
                 <img src="<?php echo TEMPLATE_DIR_URI . '/images/logo.png'; ?>" alt="One Eyed Cat Brewing">
+                <h1>Coming Soon</h1>
             </div>
         </div>
     </div>
