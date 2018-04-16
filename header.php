@@ -33,7 +33,6 @@
 				'menu_id'        => 'mobile-menu-icons'
 			));
 		?>
-	
 	</nav>
 	<nav class="desktop-nav">
 		<div class="container">

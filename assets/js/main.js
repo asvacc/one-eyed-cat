@@ -20,7 +20,8 @@ function initHeadhesive(){
         offsetSide: 'bottom'
     }
 
-    var header = new Headhesive('nav.desktop-nav', options);
+    if($('header').length > 0)
+        var header = new Headhesive('nav.desktop-nav', options);
 }
 
 function initHomepageSlider(){

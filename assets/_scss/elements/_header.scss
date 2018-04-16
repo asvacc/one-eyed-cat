@@ -1,5 +1,5 @@
 header{
-    .home &{
+    .page-template-page-home &{
         height:100vh;
     }
 
@@ -26,16 +26,8 @@ header{
         width:95%;
         z-index:1;
         img{
-            max-height:500px;
-            @include grid-media($tablet){
-                max-height:400px;
-            }
-            @media (max-height: 750px){
-                max-height:275px;
-            }
-            @media (max-height: 500px){
-                max-height:200px;
-            }
+            max-height:45vh;
+            max-width:70vw;
         }
         h1{
             font-size: 4em;

@@ -457,7 +457,7 @@ section {
   display: table;
   clear: both; }
 
-.button {
+.button, .age-restriction .age-gate-wrapper button {
   display: inline-block;
   padding: .5em 1em;
   background: black;
@@ -470,12 +470,12 @@ section {
   text-transform: uppercase;
   font-size: .9em;
   transition: .15s all ease-in-out; }
-  .button:hover {
+  .button:hover, .age-restriction .age-gate-wrapper button:hover {
     background: white;
     color: black; }
-  .button.light {
+  .button.light, .age-restriction .age-gate-wrapper button.light {
     border: 3px solid black; }
-    .button.light:hover {
+    .button.light:hover, .age-restriction .age-gate-wrapper button.light:hover {
       background: white; }
 
 header {
@@ -484,7 +484,7 @@ header {
   background-position: center;
   background-attachment: fixed;
   position: relative; }
-  .home header {
+  .page-template-page-home header {
     height: 100vh; }
   header.short {
     background-color: #111;
@@ -500,16 +500,8 @@ header {
     width: 95%;
     z-index: 1; }
     header .centered img {
-      max-height: 500px; }
-      @media (max-width: 750px) {
-        header .centered img {
-          max-height: 400px; } }
-      @media (max-height: 750px) {
-        header .centered img {
-          max-height: 275px; } }
-      @media (max-height: 500px) {
-        header .centered img {
-          max-height: 200px; } }
+      max-height: 45vh;
+      max-width: 70vw; }
     header .centered h1 {
       font-size: 4em;
       margin: 0;
@@ -685,7 +677,8 @@ nav {
   transform: translateX(100%);
   transition: .15s transform ease-in-out, .15s background ease-in-out;
   top: 56px;
-  height: 100%; }
+  height: calc(100% - 56px);
+  overflow-y: auto; }
   .mobile-nav.active {
     transform: translateX(0); }
   @media (max-width: 750px) {
@@ -839,35 +832,72 @@ footer {
         ._404 .container h2 {
           font-size: 1.5em; } }
 
-.article#article-content .container {
-  max-width: 700px; }
+.age-restriction .age-gate-wrapper {
+  background: rgba(0, 0, 0, 0.95); }
+  .age-restriction .age-gate-wrapper .age-gate-logo {
+    line-height: 0;
+    margin-bottom: 0; }
+    .age-restriction .age-gate-wrapper .age-gate-logo img {
+      max-width: 70vw;
+      max-height: 50vh; }
+  .age-restriction .age-gate-wrapper .age-gate-challenge {
+    font-family: "Stint Ultra Expanded", cursive;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  .age-restriction .age-gate-wrapper button {
+    cursor: pointer;
+    background: transparent;
+    padding: 1em 2em;
+    margin-bottom: 0; }
+    .age-restriction .age-gate-wrapper button + button {
+      margin-left: 1em; }
 
-.article#article-content a {
-  color: black;
-  border-bottom: 1px solid black;
-  text-decoration: none;
-  transition: .15s all ease-in-out; }
-  .article#article-content a:hover {
-    color: #999;
-    border-bottom: 1px solid #999; }
-
-.article#article-content h1, .article#article-content h2, .article#article-content h3, .article#article-content h4, .article#article-content h5, .article#article-content h6 {
-  margin: 1em 0 .65em; }
-
-.article#article-content p {
-  margin-top: 0; }
-
-.article#article-content ul, .article#article-content ol {
-  margin-top: 0; }
-
-.article-button {
-  padding-top: 0; }
-  .article-button .container {
-    text-align: center; }
-    .article-button .container .button {
-      border: 3px solid black; }
-      .article-button .container .button:hover {
-        border: 3px solid black; }
+section.artist-bio {
+  background: black; }
+  section.artist-bio .container {
+    display: table; }
+    section.artist-bio .container .left, section.artist-bio .container .right {
+      display: table-cell;
+      vertical-align: middle; }
+    section.artist-bio .container .left {
+      text-align: center;
+      width: 40%; }
+      section.artist-bio .container .left img {
+        max-width: 95%; }
+      @media (max-width: 960px) {
+        section.artist-bio .container .left {
+          width: 50%; } }
+      @media (max-width: 750px) {
+        section.artist-bio .container .left {
+          display: block;
+          width: 100%; }
+          section.artist-bio .container .left img {
+            max-height: 400px; } }
+    section.artist-bio .container .right {
+      width: 60%;
+      padding-left: 5%;
+      color: white; }
+      @media (max-width: 960px) {
+        section.artist-bio .container .right {
+          width: 50%;
+          padding-left: 3%; }
+          section.artist-bio .container .right p {
+            font-size: 1em; } }
+      @media (max-width: 750px) {
+        section.artist-bio .container .right {
+          display: block;
+          width: 100%;
+          margin-top: 2rem; } }
+      section.artist-bio .container .right h2 {
+        margin-top: 0;
+        margin-bottom: .75em; }
+        @media (max-width: 750px) {
+          section.artist-bio .container .right h2 {
+            font-size: 2em; } }
+      section.artist-bio .container .right p {
+        margin-top: 0; }
+        section.artist-bio .container .right p + p {
+          margin-top: 1em; }
 
 section.artist-bio {
   background: black; }
@@ -1005,21 +1035,21 @@ section.artist-bio {
   text-align: center; }
   .cta .container h2, .cta .container h4 {
     margin: 0; }
-  .cta .container .button {
+  .cta .container .button, .cta .container .age-restriction .age-gate-wrapper button, .age-restriction .age-gate-wrapper .cta .container button {
     margin: 4em 0; }
   @media (max-width: 750px) {
     .cta .container h2 {
       font-size: 2em; }
     .cta .container h4 {
       font-size: 1em; }
-    .cta .container .button {
+    .cta .container .button, .cta .container .age-restriction .age-gate-wrapper button, .age-restriction .age-gate-wrapper .cta .container button {
       margin: 3em 0; } }
   @media (max-width: 480px) {
     .cta .container h2 {
       font-size: 1.5em; }
     .cta .container h4 {
       font-size: .9em; }
-    .cta .container .button {
+    .cta .container .button, .cta .container .age-restriction .age-gate-wrapper button, .age-restriction .age-gate-wrapper .cta .container button {
       font-size: .85em; } }
 
 .events {
@@ -1084,11 +1114,11 @@ section.artist-bio {
           overflow: hidden;
           white-space: pre;
           text-overflow: ellipsis; }
-    .events .container .button {
+    .events .container .button, .events .container .age-restriction .age-gate-wrapper button, .age-restriction .age-gate-wrapper .events .container button {
       margin-top: 3rem;
       border-color: black;
       font-weight: bold; }
-      .events .container .button:hover {
+      .events .container .button:hover, .events .container .age-restriction .age-gate-wrapper button:hover, .age-restriction .age-gate-wrapper .events .container button:hover {
         border-color: black;
         background: transparent; }
 
@@ -1430,25 +1460,25 @@ section.social-media {
     margin: 0; }
     .wysiwyg .container p + p {
       margin-top: 1em; }
-  .wysiwyg .container .button {
+  .wysiwyg .container .button, .wysiwyg .container .age-restriction .age-gate-wrapper button, .age-restriction .age-gate-wrapper .wysiwyg .container button {
     margin-top: 2em; }
-    .wysiwyg .container .button.no-padding {
+    .wysiwyg .container .button.no-padding, .wysiwyg .container .age-restriction .age-gate-wrapper button.no-padding, .age-restriction .age-gate-wrapper .wysiwyg .container button.no-padding {
       margin-top: 0; }
-    .wysiwyg .container .button + .button {
+    .wysiwyg .container .button + .button, .wysiwyg .container .age-restriction .age-gate-wrapper button + .button, .age-restriction .age-gate-wrapper .wysiwyg .container button + .button, .wysiwyg .container .age-restriction .age-gate-wrapper .button + button, .age-restriction .age-gate-wrapper .wysiwyg .container .button + button, .wysiwyg .container .age-restriction .age-gate-wrapper button + button, .age-restriction .age-gate-wrapper .wysiwyg .container button + button {
       margin-left: 1em; }
       @media (max-width: 480px) {
-        .wysiwyg .container .button + .button {
+        .wysiwyg .container .button + .button, .wysiwyg .container .age-restriction .age-gate-wrapper button + .button, .age-restriction .age-gate-wrapper .wysiwyg .container button + .button, .wysiwyg .container .age-restriction .age-gate-wrapper .button + button, .age-restriction .age-gate-wrapper .wysiwyg .container .button + button, .wysiwyg .container .age-restriction .age-gate-wrapper button + button, .age-restriction .age-gate-wrapper .wysiwyg .container button + button {
           margin-left: 0;
           margin-top: 1em; } }
     @media (max-width: 480px) {
-      .wysiwyg .container .button {
+      .wysiwyg .container .button, .wysiwyg .container .age-restriction .age-gate-wrapper button, .age-restriction .age-gate-wrapper .wysiwyg .container button {
         display: block; } }
-    .wysiwyg .container .button:hover {
+    .wysiwyg .container .button:hover, .wysiwyg .container .age-restriction .age-gate-wrapper button:hover, .age-restriction .age-gate-wrapper .wysiwyg .container button:hover {
       color: black; }
 
-.wysiwyg.white .button {
+.wysiwyg.white .button, .wysiwyg.white .age-restriction .age-gate-wrapper button, .age-restriction .age-gate-wrapper .wysiwyg.white button {
   border: 3px solid black; }
-  .wysiwyg.white .button:hover {
+  .wysiwyg.white .button:hover, .wysiwyg.white .age-restriction .age-gate-wrapper button:hover, .age-restriction .age-gate-wrapper .wysiwyg.white button:hover {
     color: black; }
 
 /*# sourceMappingURL=all.css.map */
